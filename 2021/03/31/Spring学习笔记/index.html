@@ -27,18 +27,18 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="常用依赖1234567891011121314151617&lt;!-- https:&#x2F;&#x2F;mvnrepository.com&#x2F;artifact&#x2F;org.springframework&#x2F;spring-webmvc --&gt;&lt;dependency&gt;    &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;    &lt;artifact">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210311144447519.png">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210311155159532.png">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210311164131694.png">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210312163056538.png">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210312165119940.png">
-<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210312165235461.png">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210311144447519.png?raw=true">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210311155159532.png?raw=true">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210311164131694.png?raw=true">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210312163056538.png?raw=true">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210312164110878.png?raw=true">
+<meta property="og:image" content="https://github.com/AuthorRight/images/blob/master/image-20210312165235461.png?raw=true">
 <meta property="article:published_time" content="2021-03-31T15:34:42.000Z">
-<meta property="article:modified_time" content="2021-03-31T15:36:28.465Z">
+<meta property="article:modified_time" content="2021-04-04T08:08:43.145Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210311144447519.png">
+<meta name="twitter:image" content="https://github.com/AuthorRight/images/blob/master/image-20210311144447519.png?raw=true">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -444,7 +444,7 @@ height:50vh;
 </ul>
 <h1 id="9、使用Java的方式配置Spring"><a href="#9、使用Java的方式配置Spring" class="headerlink" title="9、使用Java的方式配置Spring"></a>9、使用Java的方式配置Spring</h1><p>完全不使用Spring的xml配置，全权交给Java来做！</p>
 <p>Java Config是Spring的一个子项目，在Spring4之后，它成为了一个核心功能！</p>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210311144447519.png" alt="image-20210311144447519"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210311144447519.png?raw=true" alt="image-20210311144447519"></p>
 <p>实体类、配置类、测试类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/这个注解表示这个类被Spring接管了，注册到了容器中</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//属性注入值</span></span><br><span class="line">    <span class="meta">@Value(&quot;czw&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;User&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -459,7 +459,7 @@ height:50vh;
 <li>静态代理</li>
 <li>动态代理</li>
 </ul>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210311155159532.png" alt="image-20210311155159532"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210311155159532.png?raw=true" alt="image-20210311155159532"></p>
 <h2 id="10-1、代理分析"><a href="#10-1、代理分析" class="headerlink" title="10.1、代理分析"></a>10.1、代理分析</h2><p>角色分析：</p>
 <ul>
 <li>抽象角色：一般会使用接口或者抽象类来解决</li>
@@ -490,7 +490,7 @@ height:50vh;
 </ul>
 <h2 id="10-2、加深理解"><a href="#10-2、加深理解" class="headerlink" title="10.2、加深理解"></a>10.2、加深理解</h2><p>代码：spring-08-proxy-demo02</p>
 <p>理解AOP</p>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210311164131694.png" alt="image-20210311164131694"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210311164131694.png?raw=true" alt="image-20210311164131694"></p>
 <h2 id="10-3、动态代理"><a href="#10-3、动态代理" class="headerlink" title="10.3、动态代理"></a>10.3、动态代理</h2><ul>
 <li>动态代理和静态代理角色一样</li>
 <li>动态代理的代理类是动态生成的，不是直接写好的</li>
@@ -514,7 +514,7 @@ height:50vh;
 <li>一个动态代理类可以代理多个类，只要是实现了同一个接口即可！</li>
 </ul>
 <h1 id="11、AOP"><a href="#11、AOP" class="headerlink" title="11、AOP"></a>11、AOP</h1><h2 id="11-1、什么是AOP"><a href="#11-1、什么是AOP" class="headerlink" title="11.1、什么是AOP"></a>11.1、什么是AOP</h2><p>AOP（Aspect Oriented Programing）意思为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型，利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各个部分之间的耦合度降低，提高程序的可重用性，同时提高了开发效率。</p>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210312163056538.png" alt="image-20210312163056538"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210312163056538.png?raw=true" alt="image-20210312163056538"></p>
 <h2 id="11-2、AOP在Spring中的作用"><a href="#11-2、AOP在Spring中的作用" class="headerlink" title="11.2、AOP在Spring中的作用"></a>11.2、AOP在Spring中的作用</h2><p>==提供声明式事务；允许用户自定义切面==</p>
 <ul>
 <li>横切关注点：跨越应用程序多个模块的方法或功能，即是，与我们业务逻辑无关的，但是我们需要关注的部分，就是横切关注点。如日志、安全、缓存、事物等等…</li>
@@ -525,9 +525,9 @@ height:50vh;
 <li>切入点（PointCut）：切面通知执行的“地点”的定义</li>
 <li>链接点（JoinPoint）：与切面点匹配的执行点</li>
 </ul>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210312165119940.png" alt="image-20210312165119940"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210312164110878.png?raw=true" alt="image-20210312165119940"></p>
 <p>SpringAOP中，通过Advice定义横切逻辑，Spring中支持 5 种类型的Advice：</p>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210312165235461.png" alt="image-20210312165235461"></p>
+<p><img src="https://github.com/AuthorRight/images/blob/master/image-20210312165235461.png?raw=true" alt="image-20210312165235461"></p>
 <p>即AOP在不改动原有代码的情况下，去增加新的功能！</p>
 <h2 id="11-3、使用Spring实现AOP"><a href="#11-3、使用Spring实现AOP" class="headerlink" title="11.3、使用Spring实现AOP"></a>11.3、使用Spring实现AOP</h2><p> 【重点】使用AOP织入，需要导入一个依赖包！</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjmatcher<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
